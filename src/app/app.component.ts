@@ -17,10 +17,13 @@ export class AppComponent {
   }
 
   get(txtOriginalText: string) {
-    this.disableButton = true;
+
     var thisComponent = this;
 
     if (txtOriginalText != '') {
+      thisComponent.txtResult = '';
+      thisComponent.disableButton = true;
+      
       this.encoderService.getBase64FromString(txtOriginalText)
         .node('!.*', function (item: string) {
           thisComponent.txtResult += item;
@@ -33,6 +36,7 @@ export class AppComponent {
           thisComponent.disableButton = false;
         });
     }
+
   }
 
   clear(txtOriginalText: any) {

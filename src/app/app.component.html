@@ -28,13 +28,18 @@
     Try it and have a little fun!, even you're welcome to take a look into the code and
     help to improve the idea.
   </div>
+  <div class="alert alert-warning" role="alert">
+    The api is currently hosted into a free azure account, so the service seems to hibernate
+    some times to free up resources, so the first call may take a little longer while the service
+    is re-established.
+  </div>
 
   <br>
 
   <form>
     <div class="mb-3">
       <label class="form-label">Original text</label>
-      <textarea class="form-control" #txtOriginalText placeholder="Write here your ideas..." required></textarea>
+      <input class="form-control" #txtOriginalText placeholder="Write here your ideas..." [disabled]="disableButton" required />
     </div>
     <div class="mb-3">
       <div class="container text-center">
